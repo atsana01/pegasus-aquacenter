@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Επικοινωνία - Pegasus Aqua Center</title>
+    <meta name="description" content="Επικοινωνήστε με το Pegasus Aqua Center. Είμαστε εδώ για να απαντήσουμε στις ερωτήσεις σας σχετικά με τα προγράμματα κολύμβησης και τις εγκαταστάσεις μας.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+  <header class="site-header fixed-top">
+    <nav class="navbar container">
+      <div class="logo">
+        <a href="index.html">
+            <img src="images/logo/logo.jpg" alt="Pegasus Aqua Center Λογότυπο">
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="εναλλαγή μενού πλοήγησης" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Αρχική</a></li>
+        <li><a href="services-gr.html">Υπηρεσίες</a></li>
+        <li><a href="commonquestion-gr.html">Συχνές Ερωτήσεις</a></li>
+        <li><a href="contactus-gr.html" class="active">Επικοινωνία</a></li>
+      </ul>
+      <div class="header-actions">
+          <a href="contactus.html" class="translate-button" aria-label="Switch to English">EN <i class="fas fa-globe"></i></a>
+          <div class="social-media-panel">
+              <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-contactus">
+    <section class="page-hero-section"> 
+      <div class="hero-overlay"></div>
+      <div class="container text-center">
+        <h1 class="hero-title wow fadeInDown">Επικοινωνήστε μαζί μας</h1>
+        <p class="hero-intro wow fadeInUp" data-wow-delay="0.2s">Είμαστε εδώ για να απαντήσουμε στις ερωτήσεις σας, να παρέχουμε πληροφορίες για τα προγράμματα κολύμβησης και τις εγκαταστάσεις μας. Επικοινωνήστε μαζί μας!</p>
+      </div>
+    </section>
+
+    <section class="contact-carousel-section section-padding contact-panel wow fadeInUp">
+        <div class="container">
+            <h2 class="section-title text-center">Ο Φιλόξενος Χώρος μας</h2>
+            <div class="contact-space-carousel" data-wow-delay="0.3s">
+                <div><img src="images/space/1.jpg" alt="Our Space Image 1"></div>
+                <div><img src="images/space/2.jpg" alt="Our Space Image 2"></div>
+                <div><img src="images/space/3.jpg" alt="Our Space Image 3"></div>
+                <div><img src="images/space/4.jpg" alt="Our Space Image 4"></div>
+                <div><img src="images/space/5.jpg" alt="Our Space Image 5"></div>
+                <div><img src="images/space/6.jpg" alt="Our Space Image 6"></div>
+                <div><img src="images/space/7.jpg" alt="Our Space Image 7"></div>
+                <div><img src="images/space/8.jpg" alt="Our Space Image 8"></div>
+                <div><img src="images/space/9.jpg" alt="Our Space Image 9"></div>
+                <div><img src="images/space/10.jpg" alt="Our Space Image 10"></div>
+                <div><img src="images/space/11.jpg" alt="Our Space Image 11"></div>
+                <div><img src="images/space/12.jpg" alt="Our Space Image 12"></div>
+                <div><img src="images/space/13.jpg" alt="Our Space Image 13"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-main-content-wrapper section-padding">
+        <div class="container">
+            <div class="contact-layout-grid">
+                <section class="contact-form-panel contact-panel wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="section-title">Στείλτε μας Μήνυμα</h2>
+                    <form class="contact-form" action="https://formspree.io/f/xyzjpdzy" method="POST">
+                      <!-- Formspree hidden fields -->
+                      <input type="hidden" name="_subject" value="Νέα υποβολή από τη φόρμα επικοινωνίας του Pegasus Aqua Center!">
+                      <!-- Honeypot field for spam protection -->
+                      <input type="text" name="_gotcha" style="display:none">
+
+                      <div class="form-group">
+                        <label for="name-gr">Το Όνομά σας</label>
+                        <input type="text" id="name-gr" name="name" placeholder="π.χ., Γιάννης Παπαδόπουλος" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email-gr">Το Email σας</label>
+                        <input type="email" id="email-gr" name="_replyto" placeholder="π.χ., yannis.papadopoulos@example.com" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="subject-gr">Θέμα</label>
+                        <input type="text" id="subject-gr" name="subject" placeholder="π.χ., Ερώτηση για Βρεφική Κολύμβηση" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="message-gr">Μήνυμα</label>
+                        <textarea id="message-gr" name="message" rows="6" placeholder="Γράψτε το μήνυμά σας εδώ..." required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Αποστολή Μηνύματος</button>
+                    </form>
+                </section>
+
+                <section class="map-panel contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <h2 class="section-title text-center">Η Τοποθεσία μας</h2>
+                    <p class="section-intro text-center" style="margin-bottom: 1.5rem;">Επισκεφθείτε μας για μια αναζωογονητική εμπειρία. Βρείτε το κέντρο μας εύκολα χρησιμοποιώντας τον παρακάτω χάρτη.</p>
+                    <div class="map-container">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3031.911737532565!2d22.1970478!3d40.5435391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1357929ab9ec34dd%3A0xec8daf21ac6b1a8c!2zzqDOl86TzpHOo86fzqMgQXF1YSBDZW50ZXI!5e0!3m2!1sel!2sgr!4v1749724368297!5m2!1sel!2sgr"
+                        width="100%" height="350" style="border:0; border-radius: var(--border-radius-sm);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
+                    </div>
+                </section>
+
+                <section class="contact-details-panel contact-panel wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="section-title">Στοιχεία Επικοινωνίας</h2>
+                    <div class="contact-info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p>Σταδίου 125, Βέροια, Ελλάδα</p>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-phone"></i>
+                      <p><a href="tel:+302331125087">+30 2331 125087</a></p>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-envelope"></i>
+                      <p><a href="mailto:pegasusaquacenter@gmail.com">pegasusaquacenter@gmail.com</a> 
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-clock"></i>
+                      <p>Δευ - Τετ - Παρ: 9:00π.μ. – 11:00π.μ. & 3:00μ.μ. – 9:00μ.μ.<br>Τρ - Πε: 3:00μ.μ. – 9:00μ.μ.<br>
+                        Σαβ: 9:00π.μ. – 1:00μ.μ.<br>
+                      Κυρ: Κλειστά</p>
+                      </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.3rem; color: var(--color-headings);">Ακολουθήστε μας</h3>
+                    <div class="social-media-panel">
+                      <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer-bottom">
+    <div class="container footer-content">
+        <p>&copy; <span id="currentYearGr"></span> Pegasus Aqua Center. Με επιφύλαξη παντός δικαιώματος.</p>
+        <ul class="footer-links">
+            <li><a href="privacy-policy-gr.html">Πολιτική Απορρήτου</a></li>
+            <li><a href="terms-of-service-gr.html">Όροι Παροχής Υπηρεσιών</a></li>
+        </ul>
+    </div>
+  </footer>
+    
+  <a href="#" class="scroll-to-top" aria-label="Μετάβαση στην κορυφή">
+      <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- <script src="email-handler.js"></script> -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          if (typeof WOW === 'function') {
+              new WOW().init();
+          }
+
+          if (typeof $ !== 'undefined' && $.fn.slick) {
+              $('.contact-space-carousel').slick({
+                  dots: true,
+                  infinite: true,
+                  speed: 500,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 3000,
+                  fade: true,
+                  cssEase: 'linear',
+                  adaptiveHeight: true
+              });
+          }
+          const currentYearSpanGr = document.getElementById('currentYearGr');
+          if (currentYearSpanGr) {
+              currentYearSpanGr.textContent = new Date().getFullYear();
+          }
+      });
+  </script>
+</body>
+</html>

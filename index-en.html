@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegasus Aqua Center - Fun & Fitness in the Water!</title>
+    <meta name="description" content="Pegasus Aqua Center offers a variety of swimming programs for all ages, from baby swimming to aqua fitness. Dive in and discover the joy of water!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Favicon (optional, replace with your actual favicon) -->
+    <!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <header class="site-header fixed-top">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index-en.html">
+                    <img src="images/logo/logo.jpg" alt="Pegasus Aqua Center Logo">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index-en.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="commonquestion.html">FAQ</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="index.html" class="translate-button" aria-label="Switch to Greek">GR <i class="fas fa-globe"></i></a>
+                <div class="social-media-panel">
+                    <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFIED: Intro Header Section to Page Hero Section -->
+        <section class="page-hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container text-center">
+                <h1 class="hero-title wow fadeInDown">Ready? Let's swim!</h1>
+                <p class="hero-intro wow fadeInUp" data-wow-delay="0.2s">In a warm, clean, and safe pool, with water at 32°C, cleaned with ozone and active oxygen, ensuring safety for both young and old.</p>
+            </div>
+        </section>
+        <hr class="section-divider">
+        <!-- Main Carousel Section -->
+        <section id="main-carousel" class="carousel-section">
+            <div class="carousel-container">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="images/carousel/1.jpg" alt="Baby Swimming">
+                    <div class="carousel-caption">
+                        <h2>Baby Swimming (from 6 months)</h2>
+                        <a href="services.html#baby-swim-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/2.jpg" alt="Toddler Swimming">
+                    <div class="carousel-caption">
+                        <h2>Toddler Swimming (from 3.5 years)</h2>
+                        <a href="services.html#toddler-swim-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/3.jpg" alt="Kids Swimming">
+                    <div class="carousel-caption">
+                        <h2>Kids Swimming (from 5.5 years)</h2>
+                        <a href="services.html#kids-swim-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/4.jpg" alt="Adult Aqua Fitness">
+                    <div class="carousel-caption">
+                        <h2>Aqua Fitness (Adults)</h2>
+                        <a href="services.html#aqua-fitness-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/5.jpg" alt="Therapeutic Swimming">
+                    <div class="carousel-caption">
+                        <h2>Therapeutic Swimming</h2>
+                        <a href="services.html#therapeutic-swim-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/6.jpg" alt="Sports Shop">
+                    <div class="carousel-caption">
+                        <h2>Sports Shop</h2>
+                        <a href="services.html#sports-shop-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/7.jpg" alt="Canteen">
+                    <div class="carousel-caption">
+                        <h2>Canteen</h2>
+                        <a href="services.html#pool-cafeteria-en" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+                 <button id="main-carousel-prev" class="carousel-control prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="main-carousel-next" class="carousel-control next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- Block Showcase Section -->
+        <section id="services-showcase" class="block-showcase-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center">Our Services</h2>
+                <div class="block-grid">
+                    <!-- Block 1 -->
+                    <a href="services.html#baby-swim-en" class="block-tile wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="images/carousel/1.jpg" alt="Baby Swimming Background">
+                        <div class="block-content">
+                            <h3>Baby Swimming</h3>
+                            <p>From 6 months</p>
+                        </div>
+                    </a>
+                    <!-- Block 2 -->
+                    <a href="services.html#toddler-swim-en" class="block-tile wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/carousel/2.jpg" alt="Toddler Swimming Background">
+                        <div class="block-content">
+                            <h3>Toddler Swimming</h3>
+                            <p>From 3.5 years</p>
+                        </div>
+                    </a>
+                    <!-- Block 3 -->
+                    <a href="services.html#kids-swim-en" class="block-tile wow fadeInUp" data-wow-delay="0.3s">
+                        <img src="images/carousel/3.jpg" alt="Kids Swimming Background">
+                        <div class="block-content">
+                            <h3>Kids Swimming</h3>
+                            <p>From 5.5 years</p>
+                        </div>
+                    </a>
+                    <!-- Block 4 -->
+                    <a href="services.html#aqua-fitness-en" class="block-tile wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="images/carousel/4.jpg" alt="Adult Aqua Fitness Background">
+                        <div class="block-content">
+                            <h3>Aqua Fitness</h3>
+                            <p>Adults</p>
+                        </div>
+                    </a>
+                    <!-- Block 5 -->
+                    <a href="services.html#therapeutic-swim-en" class="block-tile wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="images/carousel/5.jpg" alt="Therapeutic Swimming Background">
+                        <div class="block-content">
+                            <h3>Therapeutic Swimming</h3>
+                        </div>
+                    </a>
+                    <!-- Block 6 -->
+                    <a href="services.html#sports-shop-en" class="block-tile wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="images/carousel/6.jpg" alt="Sports Shop Background">
+                        <div class="block-content">
+                            <h3>Sports Shop</h3>
+                            <p>Find all your swimming gear here.</p>
+                        </div>
+                    </a>
+                    <!-- Block 7 -->
+                    <a href="services.html#pool-cafeteria-en" class="block-tile wow fadeInUp" data-wow-delay="0.7s">
+                        <img src="images/carousel/7.jpg" alt="Canteen Background">
+                        <div class="block-content">
+                            <h3>Canteen</h3>
+                            <p>Refreshments and snacks available.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Panel Section -->
+        <section id="reviews" class="review-panel-section section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">What Our Visitors Say</h2>
+                <div class="review-slider">
+                    <div class="review-slide active">
+                        <p>"Everything is spotless. I highly recommend it. Both of my children go for swimming lessons there."</p>
+                        <cite>– Eleni M. (a month ago)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Clean space, very polite staff, the canteen is very convenient for waiting parents... and my little one is thrilled!!"</p>
+                        <cite>– Kyriaki L. (a year ago)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Excellent facilities, spotless, fully equipped. Exercise programs for all tastes. Even after years of operation, the facilities are as spotless as the first day. By far the best form of exercise."</p>
+                        <cite>– Dimitra M. (3 years ago)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"A wonderful space for our little friends and more. Spotless facilities and the pool is filtered with active ozone. Helpful and well-trained staff."</p>
+                        <cite>– Apostolos T. (6 years ago)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Pegasus is great, a clean place with helpful staff. The water is clean and warm, ideal for young children. Everything is beautiful so that every child can learn to swim and love the water."</p>
+                        <cite>– Spyros Th. (6 years ago)</cite>
+                    </div>
+                </div>
+                <div class="review-controls">
+                    <button id="review-prev-button" class="review-control prev" aria-label="Previous review">&#10094;</button>
+                    <button id="review-next-button" class="review-control next" aria-label="Next review">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map Section -->
+        <section id="location-map" class="index-map-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center wow fadeInDown">Our Location</h2>
+                <p class="section-intro text-center wow fadeInUp" data-wow-delay="0.2s">
+                    We're excited to welcome you! Pegasus Aqua Center is conveniently located. Use the interactive map below to get directions and plan your visit.
+                </p>
+                <div class="map-outer-container wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.91173536387!2d22.19704777634841!3d40.54353914791126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1357929ab9ec34dd%3A0xec8daf21ac6b1a8c!2zzqDOl86TzpHOo86fzqMgQXF1YSBDZW50ZXI!5e0!3m2!1sel!2s!4v1749727074590!5m2!1sel!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Pegasus Aqua Center Location Map"></iframe>
+                    </div>
+                </div>
+                <div class="map-contact-info text-center wow fadeInUp" data-wow-delay="0.5s">
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+302331125087">+30 2331 125087</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:pegasusaquacenter@gmail.com">pegasusaquacenter@gmail.com</a></p>
+                </div>
+                <!-- If you add buttons, they could go here, wrapped in a div with class="map-actions" -->
+                <!-- Example:
+                <div class="map-actions">
+                    <a href="#" class="btn btn-primary">Get Directions</a>
+                    <a href="contactus.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Pegasus Aqua Center. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- WOW.js Initialization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        // Ensure WOW.js is initialized after the DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof WOW === 'function') {
+                new WOW().init();
+            }
+        });
+    </script>
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegasus Aqua Center - Διασκέδαση & Άσκηση στο Νερό!</title>
+    <meta name="description" content="Το Pegasus Aqua Center προσφέρει μια ποικιλία προγραμμάτων κολύμβησης για όλες τις ηλικίες, από βρεφική κολύμβηση έως aqua fitness. Βουτήξτε και ανακαλύψτε τη χαρά του νερού!">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Favicon (optional, replace with your actual favicon) -->
+    <!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <header class="site-header fixed-top">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo/logo.jpg" alt="Λογότυπο Pegasus Aqua Center">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="εναλλαγή μενού πλοήγησης" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Αρχική</a></li>
+                <li><a href="services-gr.html">Υπηρεσίες</a></li>
+                <li><a href="commonquestion-gr.html">Συχνές Ερωτήσεις</a></li>
+                <li><a href="contactus-gr.html">Επικοινωνία</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="index-en.html" class="translate-button" aria-label="Εναλλαγή στα Αγγλικά">EN <i class="fas fa-globe"></i></a>
+                <div class="social-media-panel">
+                    <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFIED: Intro Header Section to Page Hero Section -->
+        <section class="page-hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container text-center">
+                <h1 class="hero-title wow fadeInDown">Έτοιμοι; Ας κολυμπήσουμε!</h1>
+                <p class="hero-intro wow fadeInUp" data-wow-delay="0.2s">Σε μια ζεστή και καθαρή και ασφαλή πισίνα, με νερό στους 32°C, καθαρισμό με όζον και ενεργό οξυγόνο, με ασφάλεια για μικρούς και μεγάλους.</p>
+            </div>
+        </section>
+        <hr class="section-divider">
+        <!-- Main Carousel Section -->
+        <section id="main-carousel" class="carousel-section">
+            <div class="carousel-container">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="images/carousel/1.jpg" alt="Βρεφική Κολύμβηση">
+                    <div class="carousel-caption">
+                        <h2>Βρεφική κολύμβηση (από 6 μηνών)</h2>
+                        <a href="services-gr.html#baby-swim-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/2.jpg" alt="Παιδική Κολύμβηση (Νήπια)">
+                    <div class="carousel-caption">
+                        <h2>Νηπιακή Κολύμβηση (από 3,5 ετών)</h2>
+                        <a href="services-gr.html#toddler-swim-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/3.jpg" alt="Παιδική Κολύμβηση">
+                    <div class="carousel-caption">
+                        <h2>Παιδική κολύμβηση (από 5,5 ετών)</h2>
+                        <a href="services-gr.html#kids-swim-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/4.jpg" alt="Aqua Fitness Ενηλίκων">
+                    <div class="carousel-caption">
+                        <h2>Aqua Fitness (Ενηλίκων)</h2>
+                        <a href="services-gr.html#aqua-fitness-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/5.jpg" alt="Θεραπευτική Κολύμβηση">
+                    <div class="carousel-caption">
+                        <h2>Θεραπευτική κολύμβηση</h2>
+                        <a href="services-gr.html#therapeutic-swim-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/6.jpg" alt="Αθλητικό Κατάστημα">
+                    <div class="carousel-caption">
+                        <h2>Αθλητικό Κατάστημα</h2>
+                        <a href="services-gr.html#sports-shop-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="carousel-slide">
+                    <img src="images/carousel/7.jpg" alt="Κυλικείο">
+                    <div class="carousel-caption">
+                        <h2>Κυλικείο</h2>
+                        <a href="services-gr.html#pool-cafeteria-gr" class="btn btn-primary">Μάθετε Περισσότερα</a>
+                    </div>
+                </div>
+            </div>
+                 <button id="main-carousel-prev" class="carousel-control prev" aria-label="Προηγούμενη διαφάνεια">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="main-carousel-next" class="carousel-control next" aria-label="Επόμενη διαφάνεια">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- Block Showcase Section -->
+        <section id="services-showcase" class="block-showcase-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center">Οι Υπηρεσίες Μας</h2>
+                <div class="block-grid">
+                    <!-- Block 1 -->
+                    <a href="services-gr.html#baby-swim-gr" class="block-tile wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="images/carousel/1.jpg" alt="Φόντο Βρεφικής Κολύμβησης">
+                        <div class="block-content">
+                            <h3>Βρεφική κολύμβηση</h3>
+                            <p>Από 6 μηνών</p>
+                        </div>
+                    </a>
+                    <!-- Block 2 -->
+                    <a href="services-gr.html#toddler-swim-gr" class="block-tile wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/carousel/2.jpg" alt="Φόντο Παιδικής Κολύμβησης (Νήπια)">
+                        <div class="block-content">
+                            <h3>Νηπιακή Κολύμβηση</h3>
+                            <p>Από 3.5 ετών</p>
+                        </div>
+                    </a>
+                    <!-- Block 3 -->
+                    <a href="services-gr.html#kids-swim-gr" class="block-tile wow fadeInUp" data-wow-delay="0.3s">
+                        <img src="images/carousel/3.jpg" alt="Φόντο Παιδικής Κολύμβησης">
+                        <div class="block-content">
+                            <h3>Παιδική Κολύμβηση</h3>
+                            <p>Από 5.5 ετών</p>
+                        </div>
+                    </a>
+                    <!-- Block 4 -->
+                    <a href="services-gr.html#aqua-fitness-gr" class="block-tile wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="images/carousel/4.jpg" alt="Φόντο Aqua Fitness Ενηλίκων">
+                        <div class="block-content">
+                            <h3>Aqua Fitness</h3>
+                            <p>Ενηλίκων</p>
+                        </div>
+                    </a>
+                    <!-- Block 5 -->
+                    <a href="services-gr.html#therapeutic-swim-gr" class="block-tile wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="images/carousel/5.jpg" alt="Φόντο Θεραπευτικής Κολύμβησης">
+                        <div class="block-content">
+                            <h3>Θεραπευτική Κολύμβηση</h3>
+                        </div>
+                    </a>
+                    <!-- Block 6 -->
+                    <a href="services-gr.html#sports-shop-gr" class="block-tile wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="images/carousel/6.jpg" alt="Φόντο Αθλητικού Καταστήματος">
+                        <div class="block-content">
+                            <h3>Αθλητικό Κατάστημα</h3>
+                            <p>Βρείτε όλο τον εξοπλισμό κολύμβησης εδώ.</p>
+                        </div>
+                    </a>
+                    <!-- Block 7 -->
+                    <a href="services-gr.html#pool-cafeteria-gr" class="block-tile wow fadeInUp" data-wow-delay="0.7s">
+                        <img src="images/carousel/7.jpg" alt="Φόντο Κυλικείου">
+                        <div class="block-content">
+                            <h3>Κυλικείο</h3>
+                            <p>Διαθέσιμα αναψυκτικά και σνακ.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Panel Section -->
+        <section id="reviews" class="review-panel-section section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Τι Λένε οι Επισκέπτες Μας</h2>
+                <div class="review-slider">
+                    <div class="review-slide active">
+                        <p>"Όλα πεντακάθαρα. Σας το συνιστώ ανεπιφύλακτα. Και τα δύο παιδιά μου πηγαίνουν κολυμβητήριο εκεί."</p>
+                        <cite>– Ελένη Μ. (πριν από ένα μήνα)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Καθαρός χώρος, ευγενέστατο προσωπικό, πολύ βολικό το κυλικείο για την αναμονή των συνοδών... και ο μικρός είναι ξετρελαμένος!!"</p>
+                        <cite>– Κυριακή Λ. (πριν από ένα χρόνο)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Εξαιρετικές εγκαταστάσεις, πεντακάθαρες, πλήρως εξοπλισμένες. Προγράμματα άσκησης για όλα τα γούστα. Ακόμα και μετά από χρόνια λειτουργίας, οι εγκαταστάσεις είναι πεντακάθαρες σαν την πρώτη ημέρα. Μακράν η καλύτερη άσκηση."</p>
+                        <cite>– Δήμητρα Μ. (πριν από 3 χρόνια)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Ένας υπέροχος χώρος για τους μικρούς μας φίλους και όχι μόνο. Πεντακάθαρες εγκαταστάσεις και η πισίνα φιλτράρεται με ενεργό όζον. Εξυπηρετικό και άρτια εκπαιδευμένο προσωπικό."</p>
+                        <cite>– Απόστολος Τ. (πριν από 6 χρόνια)</cite>
+                    </div>
+                    <div class="review-slide">
+                        <p>"Ωραίος ο Πήγασος, καθαρό μαγαζί με εξυπηρετικό προσωπικό. Τα νερά είναι καθαρά και ζεστά, ιδανικά για μικρά παιδιά. Όλα είναι όμορφα για να μπορεί κάθε παιδί να μάθει κολύμβηση και να αγαπήσει το νερό."</p>
+                        <cite>– Σπύρος Θ. (πριν από 6 χρόνια)</cite>
+                    </div>
+                </div>
+                <div class="review-controls">
+                    <button id="review-prev-button" class="review-control prev" aria-label="Προηγούμενη κριτική">&#10094;</button>
+                    <button id="review-next-button" class="review-control next" aria-label="Επόμενη κριτική">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map Section -->
+        <section id="location-map" class="index-map-section section-padding">
+            <div class="container">
+                <h2 class="section-title text-center wow fadeInDown">Η τοποθεσία μας</h2>
+                <p class="section-intro text-center wow fadeInUp" data-wow-delay="0.2s">
+                    Σας καλωσορίζουμε στο κολυμβητήριο ΠΗΓΑΣΟΣ Aqua Center, Χρησιμοποιήστε τον παρακάτω διαδραστικό χάρτη για να λάβετε οδηγίες και να προγραμματίσετε την επίσκεψή σας.
+                </p>
+                <div class="map-outer-container wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.91173536387!2d22.19704777634841!3d40.54353914791126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1357929ab9ec34dd%3A0xec8daf21ac6b1a8c!2zzqDOl86TzpHOo86fzqMgQXF1YSBDZW50ZXI!5e0!3m2!1sel!2s!4v1749727074590!5m2!1sel!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Χάρτης Τοποθεσίας Pegasus Aqua Center"></iframe>
+                    </div>
+                </div>
+                <div class="map-contact-info text-center wow fadeInUp" data-wow-delay="0.5s">
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+302331125087">+30 2331 125087</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:pegasusaquacenter@gmail.com">pegasusaquacenter@gmail.com</a></p>
+                </div>
+                <!-- If you add buttons, they could go here, wrapped in a div with class="map-actions" -->
+                <!-- Example:
+                <div class="map-actions">
+                    <a href="#" class="btn btn-primary">Get Directions</a>
+                    <a href="contactus.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Pegasus Aqua Center. Με επιφύλαξη παντός δικαιώματος.</p>
+            <ul class="footer-links">
+                <li><a href="#">Πολιτική Απορρήτου</a></li>
+                <li><a href="#">Όροι Παροχής Υπηρεσιών</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- WOW.js Initialization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        // Ensure WOW.js is initialized after the DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof WOW === 'function') {
+                new WOW().init();
+            }
+        });
+    </script>
+    <a href="#" class="scroll-to-top" aria-label="Κύλιση στην κορυφή">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>

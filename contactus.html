@@ -1,0 +1,196 @@
+<!-- team.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pegasus Aqua Center</title>
+    <meta name="description" content="Get in touch with Pegasus Aqua Center. We're here to answer your questions about our swimming programs and facilities.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Add Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+  <header class="site-header fixed-top">
+    <nav class="navbar container">
+      <div class="logo">
+        <a href="index-en.html">
+            <img src="images/logo/logo.jpg" alt="Pegasus Aqua Center Logo">
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="commonquestion.html">FAQ</a></li>
+        <li><a href="contactus.html" class="active">Contact Us</a></li>
+      </ul>
+      <div class="header-actions">
+          <a href="contactus-gr.html" class="translate-button" aria-label="Switch to Greek">GR <i class="fas fa-globe"></i></a>
+          <div class="social-media-panel">
+              <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-contactus">
+    <section class="page-hero-section"> 
+      <div class="hero-overlay"></div>
+      <div class="container text-center">
+        <h1 class="hero-title wow fadeInDown">Get in Touch</h1>
+        <p class="hero-intro wow fadeInUp" data-wow-delay="0.2s">We’re here to answer your questions and provide information about our swimming programs and facilities. Don’t hesitate to get in touch with us!</p>
+      </div>
+    </section>
+
+    <section class="contact-carousel-section section-padding contact-panel wow fadeInUp">
+        <div class="container">
+            <h2 class="section-title text-center">Our Welcoming Space</h2>
+            <div class="contact-space-carousel" data-wow-delay="0.3s">
+                <div><img src="images/space/1.jpg" alt="Our Space Image 1"></div>
+                <div><img src="images/space/2.jpg" alt="Our Space Image 2"></div>
+                <div><img src="images/space/3.jpg" alt="Our Space Image 3"></div>
+                <div><img src="images/space/4.jpg" alt="Our Space Image 4"></div>
+                <div><img src="images/space/5.jpg" alt="Our Space Image 5"></div>
+                <div><img src="images/space/6.jpg" alt="Our Space Image 6"></div>
+                <div><img src="images/space/7.jpg" alt="Our Space Image 7"></div>
+                <div><img src="images/space/8.jpg" alt="Our Space Image 8"></div>
+                <div><img src="images/space/9.jpg" alt="Our Space Image 9"></div>
+                <div><img src="images/space/10.jpg" alt="Our Space Image 10"></div>
+                <div><img src="images/space/11.jpg" alt="Our Space Image 11"></div>
+                <div><img src="images/space/12.jpg" alt="Our Space Image 12"></div>
+                <div><img src="images/space/13.jpg" alt="Our Space Image 13"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-main-content-wrapper section-padding">
+        <div class="container">
+            <div class="contact-layout-grid">
+                <section class="contact-form-panel contact-panel wow fadeInUp" data-wow-delay="0.1s">
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <form class="contact-form" action="https://formspree.io/f/xyzjpdzy" method="POST">
+                      <!-- Formspree hidden fields -->
+                      <input type="hidden" name="_subject" value="New Submission from Pegasus Aqua Center Contact Form!">
+                      <!-- Honeypot field for spam protection -->
+                      <input type="text" name="_gotcha" style="display:none">
+
+                      <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="e.g., john.doe@example.com" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g., Inquiry about Baby Swimming" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </section>
+
+                <section class="map-panel contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <h2 class="section-title text-center">Our Location</h2>
+                    <p class="section-intro text-center" style="margin-bottom: 1.5rem;">Visit us for a refreshing experience. Find our center easily using the map below.</p>
+                    <div class="map-container">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3031.911737532565!2d22.1970478!3d40.5435391!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1357929ab9ec34dd%3A0xec8daf21ac6b1a8c!2zzqDOl86TzpHOo86fzqMgQXF1YSBDZW50ZXI!5e0!3m2!1sen!2s!4v1749724368297!5m2!1sen!2s"
+                        width="100%" height="350" style="border:0; border-radius: var(--border-radius-sm);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                      </iframe>
+                    </div>
+                </section>
+
+                <section class="contact-details-panel contact-panel wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="section-title">Contact Information</h2>
+                    <div class="contact-info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p>Stadiou 125, Veria, Greece</p>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-phone"></i>
+                      <p><a href="tel:+302331125087">+30 2331 125087</a></p>
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-envelope"></i>
+                      <p><a href="mailto:pegasusaquacenter@gmail.com">pegasusaquacenter@gmail.com</a> 
+                    </div>
+                    <div class="contact-info-item">
+                      <i class="fas fa-clock"></i>
+                     <p>Mon - Wed - Fri: 9:00AM – 11:00AM & 3:00PM – 9:00PM<br>
+                    Tue - Thu: 3:00PM – 9:00PM<br>
+                    Sat: 9:00AM – 1:00PM<br>
+                    Sun: Closed</p>
+                    </div>
+                    <h3 style="margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.3rem; color: var(--color-headings);">Follow Us</h3>
+                    <div class="social-media-panel">
+                      <a href="https://www.facebook.com/pegasusaquacenter" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.instagram.com/pegasusaquacenter/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <footer class="site-footer-bottom">
+    <div class="container footer-content">
+        <p>&copy; <span id="currentYearEn"></span> Pegasus Aqua Center. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+    </div>
+  </footer>
+    
+  <a href="#" class="scroll-to-top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <!-- <script src="email-handler.js"></script> -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          if (typeof WOW === 'function') {
+              new WOW().init();
+          }
+
+          if (typeof $ !== 'undefined' && $.fn.slick) {
+              $('.contact-space-carousel').slick({
+                  dots: true,
+                  infinite: true,
+                  speed: 500,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 3000,
+                  fade: true, /* For a smoother one-by-one transition */
+                  cssEase: 'linear',
+                  adaptiveHeight: true
+              });
+          }
+          // Ensure current year is set
+          const currentYearSpanEn = document.getElementById('currentYearEn');
+          if (currentYearSpanEn) {
+              currentYearSpanEn.textContent = new Date().getFullYear();
+          }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2531 @@
+/* CSS Variables */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+
+    --color-primary: #0077CC; /* Bright Blue for water theme */
+    --color-primary-dark: #005fa3;
+    --color-primary-light: #e6f2ff;
+    
+    --color-secondary: #FFC107; /* Sunny Yellow for accents */
+    --color-accent: #28A745; /* Friendly Green for buttons or highlights */
+
+    --color-text: #333333;
+    --color-text-light: #5f6c7b;
+    --color-headings: #004466; /* Darker blue for headings */
+    --color-background: #FFFFFF;
+    --color-light-gray: #F8F9FA; /* For light section backgrounds */
+    --color-border: #DEE2E6;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px; /* Increased for more rounded feel */
+
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.1), 0 2px 6px -2px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+    --shadow-lg: 0 10px 20px -5px rgba(0, 0, 0, 0.1), 0 6px 12px -3px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+
+    --header-height: 70px; 
+
+    --color-primary-rgb: 0, 119, 204; /* Add this for the input focus shadow */
+}
+
+/* Global Resets and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed header on mobile/tablet */
+}
+
+@media (min-width: 992px) {
+  html {
+    scroll-padding-top: 100px; /* Adjusted offset for desktop header */
+  }
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7; 
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; 
+    padding-top: var(--header-height); 
+    background-image: linear-gradient(45deg, var(--color-primary-light) 25%, transparent 25%), linear-gradient(-45deg, var(--color-primary-light) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--color-primary-light) 75%), linear-gradient(-45deg, transparent 75%, var(--color-primary-light) 75%);
+    background-size: 30px 30px; 
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+    position: relative; 
+    display: flex; /* Added for sticky footer */
+    flex-direction: column; /* Added for sticky footer */
+    min-height: 100vh; /* Added for sticky footer */
+}
+
+main { /* Added for sticky footer */
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--color-headings);
+    line-height: 1.35; /* Adjusted line-height for headings */
+    margin-bottom: 0.85em; 
+}
+
+/* Enhanced font sizes and weights */
+h1 { font-size: clamp(2.2rem, 6.5vw, 3.6rem); font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+h2.section-title { font-size: clamp(1.9rem, 5.5vw, 2.9rem); color: var(--color-primary); margin-bottom: 1.8rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
+h3 { font-size: clamp(1.3rem, 4.5vw, 1.9rem); font-weight: 600; }
+h4 { font-size: clamp(1.05rem, 3.8vw, 1.5rem); font-weight: 600; }
+
+p { margin-bottom: 1.2rem; color: var(--color-text-light); font-size: clamp(0.95rem, 2.7vw, 1.05rem); }
+a { color: var(--color-primary); text-decoration: none; transition: color 0.2s ease-in-out; }
+a:hover { color: var(--color-primary-dark); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+    width: 90%;
+    max-width: 1280px; /* Slightly increased max-width for a more spacious feel */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+}
+
+.section-padding { padding: clamp(3.5rem, 9vw, 5.5rem) 0; } 
+.bg-light { 
+    background-color: var(--color-light-gray); 
+    /* Enhanced bg-light */
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.text-center { text-align: center; }
+
+.section-intro {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem); /* Enhanced intro font size */
+    color: var(--color-text); /* Darker for better readability */
+    max-width: 820px; /* Slightly wider */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem; /* More space after intro */
+    line-height: 1.75;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-weight: 600; /* Bolder buttons */
+    font-size: clamp(0.95rem, 2.7vw, 1.05rem); 
+    padding: 0.8em 1.7em; /* Adjusted padding */
+    border-radius: var(--border-radius-lg); /* More rounded buttons */
+    text-align: center;
+    transition: all 0.25s ease-in-out, transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1); /* Added transform for bubble */
+    cursor: pointer;
+    border: 2px solid transparent;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm); /* Subtle shadow for buttons */
+}
+.btn:hover, .btn:focus { /* Added focus for accessibility */
+    transform: scale(1.08); /* Bubble effect */
+    box-shadow: var(--shadow-md); /* Enhanced shadow on hover */
+}
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+}
+.btn-primary:hover, .btn-primary:focus { /* Added focus */
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-headings);
+    border-color: var(--color-secondary);
+}
+.btn-secondary:hover, .btn-secondary:focus { /* Added focus */
+    background-color: #FFD700; /* Darker yellow */
+    border-color: #FFD700;
+}
+
+/* Centering for buttons within cards */
+.service-card .btn,
+.service-card .btn-faq,
+.service-card .btn-secondary {
+    display: block;
+    margin: 25px auto 0 auto; /* Increased top margin */
+    text-align: center;
+    max-width: 220px; 
+}
+
+/* ADDED BUBBLE STYLES AND SCROLL-TO-TOP */
+
+/* Service Card Styles (inspired by faq-item for a bubble look) */
+.service-bubble-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px; /* Bubble shape */
+  margin: 20px auto; /* Centered if in a single column, or use in grid */
+  padding: 25px; /* Generous padding */
+  box-shadow: var(--shadow-md), 0 0 12px rgba(0, 119, 204, 0.12) inset; /* Adjusted inner glow */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border: 1px solid var(--color-primary-light);
+  overflow: hidden;
+  max-width: 700px; /* Control max width for single cards */
+}
+
+.service-bubble-card:hover {
+  transform: translateY(-7px) scale(1.02); /* Enhanced hover */
+  box-shadow: var(--shadow-lg), 0 0 18px rgba(0, 119, 204, 0.18) inset;
+}
+
+.service-bubble-card img.service-image { /* Specific class for service images */
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md); /* Rounded corners for images */
+  margin-bottom: 20px; /* Space after image */
+  border: 1px solid var(--color-border); /* Subtle border for image */
+}
+
+.service-bubble-card h3 {
+  color: var(--color-primary);
+  font-size: clamp(1.3rem, 3.2vw, 1.8rem); /* Adjusted size */
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.service-bubble-card p {
+  color: var(--color-text-light);
+  font-size: clamp(0.95rem, 2.3vw, 1.05rem); /* Adjusted size */
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.service-bubble-card .btn {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Grid for service cards if multiple are displayed */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax for new card size */
+    gap: 30px; /* Increased gap */
+    padding: 25px 0; 
+    justify-items: center; /* Center items in the grid tracks */
+}
+
+/* Team Bubble Card Styles */
+.team-bubble-card {
+  background: #fff; /* White background */
+  border-radius: 20px; /* Bubble shape */
+  padding: 25px; /* Inner padding */
+  box-shadow: var(--shadow-md), 0 0 10px rgba(0,0,0,0.05) inset; /* Softer inner glow */
+  text-align: center;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border: 1px solid #e9ecef; /* Lighter border */
+  max-width: 350px; /* Control width if in a single column or for consistency */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; /* Added margin for spacing in a list */
+}
+
+.team-bubble-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(0,0,0,0.08) inset;
+}
+
+.team-bubble-card img.team-member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px auto; /* Centered, space below */
+  border: 4px solid var(--color-primary-light); /* Highlight border */
+  box-shadow: var(--shadow-sm);
+}
+
+.team-bubble-card h3 {
+  color: var(--color-headings);
+  font-size: clamp(1.25rem, 2.9vw, 1.65rem);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.team-bubble-card p.team-member-role {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+}
+
+.team-bubble-card p.team-member-bio {
+  color: var(--color-text-light);
+  font-size: clamp(0.9rem, 2.1vw, 1rem);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  min-height: 50px; /* Ensure some space for bio */
+}
+
+.team-bubble-card .social-links {
+    margin-top: 15px;
+}
+
+.team-bubble-card .social-links a {
+  color: var(--color-primary);
+  margin: 0 10px; /* Increased spacing */
+  font-size: 1.4rem; /* Larger icons */
+  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.team-bubble-card .social-links a:hover {
+  color: var(--color-primary-dark);
+  transform: scale(1.2); /* Bubble pop */
+}
+
+/* News Item Bubble Card Styles */
+.news-item-bubble-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  margin-bottom: 25px; /* Spacing between news items */
+  padding: 20px 25px; /* Padding */
+  box-shadow: var(--shadow-md), 0 0 10px rgba(0, 119, 204, 0.08) inset;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border: 1px solid var(--color-primary-light);
+  overflow: hidden;
+}
+
+.news-item-bubble-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(0, 119, 204, 0.12) inset;
+}
+
+.news-item-bubble-card img.news-image { /* If news items have images */
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 18px;
+  border: 1px solid var(--color-border);
+}
+
+.news-item-bubble-card h3 {
+  color: var(--color-primary);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.news-item-bubble-card h3 a { /* Make title clickable */
+    color: inherit;
+    text-decoration: none;
+}
+.news-item-bubble-card h3 a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+.news-item-bubble-card p.news-meta { /* For date, author etc. */
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+.news-item-bubble-card p.news-excerpt {
+  color: var(--color-text);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.news-item-bubble-card .btn-read-more {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Contact Page Bubble Style */
+.contact-info-bubble, .contact-form-bubble {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  padding: 30px; /* More padding for main content sections */
+  box-shadow: var(--shadow-md), 0 0 12px rgba(0, 119, 204, 0.12) inset;
+  margin-bottom: 30px; /* Space between bubbles if there are multiple */
+  border: 1px solid var(--color-primary-light);
+}
+
+.contact-info-bubble h2, .contact-form-bubble h2 { /* Assuming h2 for section titles */
+    color: var(--color-primary);
+    margin-top: 0; /* Remove top margin if it's the first element */
+    margin-bottom: 20px;
+}
+
+/* Section Divider Line */
+.section-divider {
+    border: none; /* Remove default border */
+    height: 3px; /* Thickness of the line */
+    background-color: #007bff; /* A common blue color, adjust as needed */
+    /* Or use a blue from your existing theme, e.g., var(--primary-color) if you have one */
+    margin-top: 0; /* Adjust spacing if needed */
+    margin-bottom: 0; /* Adjust spacing if needed */
+    /* Consider adding margin if sections don't have padding */
+    /* margin-top: 2rem; */
+    /* margin-bottom: 2rem; */
+}
+
+/* Scroll-to-top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: white;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px; /* Vertically center icon */
+    border-radius: 50%; /* Circular shape */
+    font-size: 1.2rem; /* Icon size */
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 998; 
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.scroll-to-top:hover {
+    background-color: var(--color-primary-dark);
+    transform: scale(1.15) translateY(-3px); /* Bubble effect */
+    box-shadow: var(--shadow-lg);
+}
+
+.scroll-to-top i {
+    position: relative;
+    top: 2px; /* Fine-tune icon position if needed */
+}
+
+/* Header & Navbar */
+.site-header.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* background-color: var(--color-primary-light); /* Old background */
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, #d0eaff 60%, var(--color-background) 100%); /* New background from faq-hero-section */
+    /* backdrop-filter: blur(10px); /* Removed as new background is more opaque */
+    box-shadow: var(--shadow-md); 
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%; /* Ensure full width */
+    transition: height 0.3s ease; /* Add transition for smoother resize */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0; /* Remove padding if container handles it */
+}
+
+.navbar .logo img {
+    max-height: calc(var(--header-height) - 20px); /* Responsive to header height */
+    width: auto;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.navbar .logo img:hover {
+    transform: scale(1.07); /* Slight bubble on logo hover */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 1.5rem; 
+}
+
+.nav-links a {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: var(--color-headings);
+    padding: 0.5rem 0.8rem; /* Adjusted padding */
+    position: relative;
+    font-size: clamp(0.9rem, 1.1vw, 1rem); /* Slightly smaller max */
+    transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Added transform for bubble */
+}
+
+.nav-links a:hover, .nav-links a:focus { /* Added focus */
+    color: var(--color-primary);
+    transform: scale(1.12) translateY(-1px); /* Bubble effect with slight lift */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px; /* Slightly thicker underline */
+    bottom: -5px; /* Adjusted position */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 65%; /* Wider underline */
+}
+.nav-links a.active {
+    color: var(--color-primary);
+    font-weight: 600; /* Bolder active link */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.translate-button {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    color: var(--color-headings);
+    background-color: var(--color-primary-light);
+    padding: 0.5rem 1rem; /* Adjusted padding */
+    border-radius: var(--border-radius-md);
+    margin-right: 1rem; /* Adjusted spacing */
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+    font-size: 0.85rem; /* Adjusted size */
+    box-shadow: var(--shadow-sm);
+}
+.translate-button:hover, .translate-button:focus { /* Added focus */
+    background-color: var(--color-primary);
+    color: white;
+    transform: scale(1.1) translateY(-1px); /* Bubble effect with slight lift */
+    box-shadow: var(--shadow-md);
+}
+.translate-button i {
+    margin-left: 0.4rem; /* More space for icon */
+}
+
+.social-media-panel a {
+    color: var(--color-headings);
+    font-size: 1.35rem; /* Slightly larger icons */
+    margin-left: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Added transform for bubble */
+}
+.social-media-panel a:hover, .social-media-panel a:focus { /* Added focus */
+    color: var(--color-primary);
+    transform: scale(1.25) translateY(-1px); /* Bubble effect with slight lift */
+}
+
+.nav-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-around;
+    width: 32px; /* Slightly larger */
+    height: 27px; /* Slightly larger */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; 
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bubble for toggle */
+}
+.nav-toggle:hover, .nav-toggle:focus {
+    transform: scale(1.1); /* Bubble for toggle */
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3.5px; /* Thicker lines */
+    background-color: var(--color-headings);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Block Showcase Section Animation (Refined for Performance & Style) --- */
+
+.block-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.block-tile {
+    display: block;
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: white;
+    /* Smoother transition for the lift effect */
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* This pseudo-element creates the "water filling" effect using a performant transform */
+.block-tile::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Set to full height */
+    background: linear-gradient(to top, hsla(195, 70%, 40%, 0.7), hsla(190, 75%, 60%, 0.8)); /* Refined watery gradient */
+    z-index: 1;
+    transform-origin: bottom; /* Animate from the bottom up */
+    transform: scaleY(0); /* Start scaled to 0 height */
+    /* Use transform for a GPU-accelerated animation */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.block-tile:hover {
+    transform: translateY(-8px); /* More subtle lift */
+    box-shadow: 0 12px 28px rgba(23, 107, 135, 0.25);
+}
+
+/* On hover, the "water" scales up to fill the tile */
+.block-tile:hover::before {
+    transform: scaleY(1);
+}
+
+.block-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* More subtle and smooth zoom effect */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.block-tile:hover img {
+    transform: scale(1.05); /* Refined, less aggressive zoom */
+}
+
+.block-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.block-content h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.block-content p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(15px);
+    /* Refined transition for the text reveal */
+    transition: opacity 0.35s ease-out 0.15s, transform 0.35s ease-out 0.15s;
+}
+
+.block-tile:hover .block-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================= */
+/* Index Page - Location Map Section             */
+/* ============================================= */
+
+.index-map-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem; /* Consistent top/bottom padding */
+    margin-bottom: 3rem;  /* Space before the footer or next section */
+    background-color: var(--color-background); /* Or var(--color-light-gray) if preferred for alternation */
+}
+
+/* The .container class within .index-map-section handles the max-width and centering for the title and intro text. */
+/* The map itself will be centered within this container but can have its own max-width. */
+
+.index-map-section .map-outer-container {
+    /* This div can be used for animations or other outer wrapper needs. */
+    /* No specific styles needed here for the centering/sizing of the map itself. */
+}
+
+.index-map-section .map-container {
+    width: 100%;
+    max-width: 800px; /* Cap map width on larger screens */
+    margin-left: auto;
+    margin-right: auto; /* Center the map container */
+    border-radius: var(--border-radius-md); /* Consistent rounded corners */
+    overflow: hidden; /* Ensures iframe respects the border-radius */
+    box-shadow: var(--shadow-md); /* Adds a subtle shadow, similar to contact page map */
+    border: 1px solid var(--color-border); /* Adds a subtle border */
+}
+
+.index-map-section .map-container iframe {
+    width: 100%; /* Make iframe responsive within its container */
+    height: 400px; /* Specific height for index page map */
+    border: 0; /* Remove default iframe border */
+    display: block; /* Removes potential extra space below iframe */
+}
+
+/* Optional: Styles for Call-to-Action buttons below the map */
+.index-map-section .map-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1.5rem; /* Space above the button row */
+}
+.index-map-section .map-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1.5rem; /* Space above the button row */
+}
+
+.map-contact-info {
+    margin-top: 2.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    line-height: 1.8;
+}
+
+.map-contact-info p {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.map-contact-info a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.map-contact-info a:hover {
+    text-decoration: underline;
+    color: var(--color-primary-dark);
+}
+
+.map-contact-info i {
+    margin-right: 0.75rem;
+    color: var(--color-primary);
+    font-size: 0.9em;
+    position: relative;
+    top: -1px;
+}
+
+/* =======here you can put the contect for the index====================================== */
+/* Tablet and Mobile Header Adjustments */
+@media (max-width: 991px) {
+    body {
+        padding-top: 75px; /* Match the new mobile header height */
+    }
+
+    .site-header.fixed-top {
+        height: 75px; /* Reduced height for better mobile layout */
+    }
+
+    .navbar.container {
+        /* Ensure items are vertically centered if header height allows */
+        align-items: center; 
+    }
+
+    .navbar .logo {
+        order: 1; /* Logo on the left */
+        flex-shrink: 0; /* Prevent logo from shrinking too much */
+    }
+
+    .navbar .header-actions {
+        order: 2; /* Social media and translate button in the middle */
+        display: flex;
+        flex-direction: column; /* Stack translate button above social media */
+        align-items: center;    /* Center them horizontally */
+        flex-grow: 1;           /* Allow this container to take up available middle space */
+        margin-left: 1rem;      /* Add some space from logo */
+        margin-right: 1rem;     /* Add some space from nav toggle */
+    }
+
+    .navbar .header-actions .translate-button {
+        margin-right: 0;        /* Remove desktop margin */
+        margin-bottom: 8px;     /* Space between button and social icons */
+    }
+
+    .navbar .header-actions .social-media-panel {
+        display: flex;          /* Ensure social icons are in a row */
+        justify-content: center;/* Center the icons if there are multiple */
+    }
+    
+    .navbar .header-actions .social-media-panel a {
+        margin: 0 0.6rem;       /* Adjust spacing for social icons for a centered look */
+    }
+
+    .navbar .nav-toggle {
+        order: 3; /* Nav toggle (hamburger) on the right */
+        display: flex !important; /* Ensure it's visible, overriding desktop display:none */
+        /* margin-left: auto; /* This could also push it to the far right if needed */
+    }
+
+    /* Adjust carousel height to account for the taller mobile header */
+    .carousel-section {
+        height: 55vh; /* Set a larger, explicit height for mobile */
+        min-height: auto; /* Reset min-height as it's no longer needed */
+        max-height: 70vh;
+    }
+
+    /* The .nav-links (actual menu items) visibility and layout 
+       are typically handled by your existing mobile menu toggle JavaScript 
+       and the CSS in the (max-width: 768px) media query. 
+       These rules primarily re-order the items in the header bar. */
+}
+
+/* Main Carousel Section */
+.carousel-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--header-height)); 
+    max-height: 680px; /* Slightly increased max height for more impact */
+    overflow: hidden;
+    border-bottom: 3px solid var(--color-primary-light); /* Thicker separator line */
+    background-color: var(--color-primary-light); /* Fallback background */
+}
+
+.carousel-section .carousel-container {
+    position: relative;
+    overflow: hidden; 
+    height: 100%; /* Ensure container fills the section height */
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center; 
+    height: 100%; /* Ensure slide fills container height */
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%; /* Make image fill the slide area */
+    object-fit: cover; 
+    display: block; 
+    filter: brightness(0.85) contrast(1.05); /* Adjusted image enhancement */
+    transition: transform 0.8s ease-out; /* Smooth zoom for active slide */
+}
+
+.carousel-slide.active img {
+    transform: scale(1.05); /* Subtle zoom for active slide image */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: clamp(20px, 5vh, 40px); /* Responsive bottom positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 50, 80, 0.8); /* Darker, more official overlay (custom dark blue) */
+    color: white;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem); /* Responsive padding */
+    border-radius: var(--border-radius-lg); /* More rounded caption box */
+    text-align: center;
+    width: clamp(70%, 80vw, 650px); /* Responsive width */
+    max-width: 90%;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    animation: fadeInCaption 0.8s 0.3s forwards ease-out; /* Fade in animation */
+}
+
+@keyframes fadeInCaption {
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-10px); /* Slight upward movement */
+    }
+}
+
+.carousel-caption h2 {
+    margin: 0 0 1.2rem 0; 
+    font-size: clamp(1.7rem, 3.8vw, 2.4rem); /* Responsive title */
+    font-weight: 700; /* Bolder title */
+    color: var(--color-secondary); /* Accent color for title */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.carousel-caption p.caption-subtitle { /* Optional: for a subtitle if added */
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 1.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.carousel-caption .btn {
+    margin-top: 1rem;
+}
+
+/* Custom Carousel Controls */
+#main-carousel .carousel-control.prev,
+#main-carousel .carousel-control.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 0; /* Remove padding if icon itself provides enough space */
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: 44px; /* Minimum touch target size */
+    height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circular background */
+    opacity: 0.7; /* Semi-transparent by default */
+    z-index: 10; /* Ensure controls are above slides */
+}
+
+#main-carousel .carousel-control.prev {
+    left: 15px; /* Adjust as needed */
+}
+
+#main-carousel .carousel-control.next {
+    right: 15px; /* Adjust as needed */
+}
+
+#main-carousel .carousel-control.prev:hover,
+#main-carousel .carousel-control.next:hover,
+#main-carousel .carousel-control.prev:focus, /* Added focus for accessibility */
+#main-carousel .carousel-control.next:focus {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker on hover/focus */
+    opacity: 1; /* Fully opaque on hover/focus */
+    outline: none; /* Remove default focus outline if custom styling is sufficient */
+}
+
+#main-carousel .carousel-control i {
+    font-size: 1.5rem; /* Adjust icon size as needed */
+}
+
+
+/* Hide default carousel controls if not desired */
+/* This rule was already present, ensure it's correctly targeting or remove if custom controls replace them */
+/*
+#main-carousel .carousel-control.prev,
+#main-carousel .carousel-control.next {
+    display: none; 
+}
+*/
+
+/* Page Hero Section (e.g., for Services, About Us pages) */
+.page-hero-section {
+  position: relative;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-light); /* Fallback color */
+  color: #fff;
+  padding: clamp(2.5rem, 8vw, 5rem) 0; /* Reduced padding */
+  min-height: 30vh; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero-section .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 40, 60, 0.6); /* Darker overlay for better text contrast */
+  z-index: 1; /* Ensures overlay is behind the text content */
+}
+
+.page-hero-section .container {
+    position: relative; /* To ensure content is above overlay */
+    z-index: 2; /* Places container content (text) above the overlay */
+    text-align: center; /* Ensure content is centered */
+}
+
+.page-hero-section .hero-title {
+    color: #fff; /* Ensure title is white against the overlay/background */
+    font-size: clamp(2.5rem, 6vw, 3.8rem); /* Responsive font size for the title */
+    margin-bottom: 0.75rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Enhanced text shadow for better readability */
+}
+
+.page-hero-section .hero-intro {
+    color: rgba(255, 255, 255, 0.95); /* Slightly off-white for the intro text */
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* Responsive font size for the intro */
+    max-width: 800px; /* Constrains the width of the intro paragraph */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Enhanced text shadow */
+}
+
+/* ADDED: Styles for the new Intro Header Section on Index Pages */
+.intro-header-section {
+    background-color: var(--color-background); 
+    /* Uses .section-padding for padding */
+    text-align: center; 
+    border-bottom: 2px solid var(--color-primary-light); /* Subtle separator */
+    position: relative; /* For pseudo-element styling */
+}
+
+/* Optional: Add a subtle decorative element to the intro section */
+.intro-header-section::before {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Position it slightly overlapping the border */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background-color: var(--color-secondary); /* Accent color */
+    border-radius: 10px 10px 0 0; /* Shape like a tab or handle */
+    opacity: 0.6;
+}
+
+.intro-header-section .container {
+    padding-top: 2.5rem; /* Additional padding for visual separation */
+    padding-bottom: 2.5rem;
+}
+
+.intro-header-section .section-title {
+    color: var(--color-headings); /* Darker, more official title */
+    margin-bottom: 1.5rem; 
+    font-weight: 700; 
+}
+
+.intro-header-section .section-intro {
+    color: var(--color-text); /* Darker text for better readability */
+    max-width: 850px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0; 
+    font-size: clamp(1.1rem, 2.7vw, 1.3rem); /* Slightly larger intro text */
+    line-height: 1.8; /* Improved line spacing */
+}
+/* END ADDED */
+
+/* Services Flip-Card Grid - Responsive Layout */
+.services-flip-grid {
+  display: grid;
+  justify-content: center; /* Centers the grid columns within the container */
+  gap: 30px;
+  padding: 25px 0;
+  /* On mobile, the grid is implicitly a single column as items wrap. */
+}
+
+/* Tablet (≥820px): Two cards per row */
+@media (min-width: 820px) {
+  .services-flip-grid {
+    grid-template-columns: repeat(2, 380px);
+  }
+  /* Center the last card if it's on a new row by itself (e.g., the 7th card) */
+  .services-flip-grid > :nth-child(odd):last-child {
+    grid-column: 1 / -1; /* Span full width to allow centering */
+    justify-self: center; /* Center the item within the spanned columns */
+  }
+}
+
+/* Desktop (≥1240px): Three cards per row */
+@media (min-width: 1240px) {
+  .services-flip-grid {
+    grid-template-columns: repeat(3, 380px);
+  }
+  /* Center the 7th card in the middle column */
+  .services-flip-grid > :nth-child(7) {
+    grid-column: 2;
+    justify-self: center;
+  }
+  /* Reset the 2-column centering rule */
+  .services-flip-grid > :nth-child(odd):last-child {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}
+
+
+.services-grid-container {
+    background-image: url('images/your-new-section-background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* You could also set a background-color here instead of or as a fallback to an image */
+    /* background-color: #f0f8ff; */ /* Example: AliceBlue */
+}
+
+/* Block Showcase Section - Grid Layout */
+.block-showcase-section {
+    background-color: var(--color-background); /* Ensure clean background */
+    border-top: 1px solid var(--color-border);
+}
+
+.block-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: clamp(1.5rem, 3vw, 2.5rem); /* Adjusted gap */
+    align-items: stretch; /* Makes tiles in a row same height */
+}
+
+.block-tile {
+    flex-basis: calc(25% - clamp(1.5rem, 3vw, 2.5rem)); 
+    min-width: 280px; /* Minimum width before wrapping */
+    position: relative; 
+    overflow: hidden; 
+    border-radius: var(--border-radius-lg); 
+    box-shadow: var(--shadow-md);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease; 
+    min-height: 320px; /* Adjusted min-height */
+    background-color: var(--color-headings); 
+    display: flex; /* Added for content alignment */
+    flex-direction: column; /* Added */
+}
+
+.block-tile .block-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 30, 50, 0.95) 0%, rgba(0, 30, 50, 0.75) 50%, rgba(0, 30, 50, 0) 100%); /* Darker, more refined gradient */
+    color: white;
+    padding: clamp(1.2rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem); /* Responsive padding */
+    transition: background-color 0.3s ease;
+    text-align: left;
+    border-bottom-left-radius: var(--border-radius-lg); 
+    border-bottom-right-radius: var(--border-radius-lg);
+    min-height: 40%; /* Ensure content area has enough space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to bottom */
+    margin-top: auto; /* Pushes content to the bottom if tile stretches */
+    width: 100%; /* Ensure it spans the tile width */
+}
+
+.block-tile .block-content h3 {
+    color: var(--color-secondary); 
+    font-size: clamp(1.25rem, 3.3vw, 1.65rem); /* Adjusted size */
+    margin-bottom: 0.4rem;
+    font-weight: 700; /* Bolder heading */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.block-tile .block-content p {
+    color: rgba(255, 255, 255, 0.95); 
+    font-size: clamp(0.85rem, 2.1vw, 0.95rem);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for block tiles on smaller screens */
+@media (max-width: 992px) { /* Tablet */
+    .block-grid .block-tile { 
+        flex-basis: calc(50% - clamp(1.5rem, 3vw, 2.5rem)); /* Two columns on tablet */
+        min-height: 300px; 
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .block-grid .block-tile { 
+        flex-basis: 100%; /* Single column on mobile */
+        min-height: 320px; 
+    }
+    .block-tile .block-content h3 {
+        font-size: clamp(1.3rem, 4vw, 1.7rem);
+    }
+    .block-tile .block-content p {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+}
+
+/* Review Panel Section */
+.review-panel-section {
+    background-color: var(--color-primary-light); /* Light blue background for contrast */
+}
+.review-panel-section .section-title {
+    margin-bottom: 3rem;
+    color: var(--color-headings); /* Darker title for this section */
+}
+
+.review-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem; 
+    background-color: var(--color-background); /* White background for slider box */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg); /* More prominent shadow */
+}
+
+.review-slide {
+    display: none; /* Hide all review slides by default */
+    padding: 2.5rem; /* More padding */
+    text-align: center;
+}
+.review-slide.active {
+    display: block;
+}
+
+.review-slide p {
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 1.5rem; /* Increased margin */
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+}
+
+.review-slide cite {
+    display: block;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+.review-date {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+    margin-top: 0.25rem;
+}
+
+.review-controls {
+    text-align: center;
+    margin-top: 2rem; /* More space for controls */
+}
+
+.review-control {
+    background-color: var(--color-primary); /* Primary color for controls */
+    color: white;
+    border: 2px solid var(--color-primary);
+    padding: 0.7rem 1.2rem;
+    font-size: 1.3rem; /* Larger control icons */
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    margin: 0 0.6rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Added transform for bubble */
+    box-shadow: var(--shadow-sm);
+}
+
+.review-control:hover, .review-control:focus { /* Added focus */
+    background-color: var(--color-primary-dark);
+    color: white;
+    transform: scale(1.15); /* Bubble effect */
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+.site-footer-bottom {
+    background-color: var(--color-primary-light); /* Changed to light blue */
+    color: var(--color-headings); /* Changed text color for readability */
+    padding: clamp(2.5rem, 6vw, 4rem) 0; /* Adjusted padding */
+    font-size: clamp(0.85rem, 2vw, 0.95rem); 
+    text-align: center; 
+    border-top: 3px solid var(--color-primary); /* Kept border, color might need adjustment based on preference */
+    margin-top: auto; /* Part of sticky footer solution */
+}
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem; /* Adjusted gap */
+}
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 0.5rem 1.2rem; /* Adjusted gap */
+    padding: 0;
+    margin-bottom: 0.8rem; 
+}
+.footer-links a { 
+    color: var(--color-primary); /* Changed link color for readability */
+    transition: color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); 
+}
+.footer-links a:hover, .footer-links a:focus { 
+    color: var(--color-primary-dark); /* Changed link hover color */
+    text-decoration: underline; 
+    transform: scale(1.1) translateY(-1px); /* Bubble effect with slight lift */
+}
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--color-text-light); /* Adjusted for readability on light blue */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: var(--header-height); /* Ensure this matches actual header height */
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Allow items to wrap if needed */
+        padding: 0.5rem 0; /* Adjust padding for mobile header */
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: var(--header-height); /* Position below header */
+        left: 0;
+        box-shadow: var(--shadow-md);
+        padding: 1rem 0;
+        z-index: 999;
+    }
+    .nav-links.nav-active { /* Corrected class name to match JS */
+        display: flex; /* Show when active */
+        background-color: rgba(255, 255, 255, 0.98); /* Ensure background for mobile nav */
+        backdrop-filter: blur(8px);
+    }
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--color-border);
+        display: block;
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+    .nav-links a::after { display: none; } /* No underline for mobile nav items */
+
+    .nav-toggle {
+        display: flex; /* Show hamburger */
+        order: 1; /* Ensure it's typically on the right or as desired */
+    }
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .logo {
+        order: 0; /* Logo first */
+    }
+    .header-actions {
+        order: 2; /* Actions after toggle on mobile if space is an issue */
+        /* Or adjust flex properties to manage space */
+        margin-left: auto; /* Push actions to the right of the logo if toggle is separate */
+    }
+
+    .carousel-section {
+        height: 55vh; /* Set a larger, explicit height for mobile */
+        min-height: auto; /* Reset min-height as it's no longer needed */
+        max-height: 70vh;
+    }
+    .carousel-caption h2 {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+    .carousel-caption .btn {
+        padding: 0.6em 1.2em;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+    .carousel-control {
+        padding: 0.6rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .block-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .review-slider {
+        padding: 0.5rem;
+    }
+    .review-slide p {
+        font-size: clamp(0.9rem, 3vw, 1.05rem);
+    }
+
+    .footer-content, .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+/* Scroll Animation (if you had one, keep or remove) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure Font Awesome icons are styled if not globally done */
+.fab, .fas {
+    line-height: 1; /* Prevents sizing issues */
+}
+
+/* Team Page Styles */
+/* Team Page Styles (additions) */
+.team-header {
+  text-align: center;
+  padding: clamp(2.5rem, 8vw, 6rem) 1rem; /* Adjusted padding */
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #e0eaff 60%, var(--color-background) 100%); /* Softer, professional gradient */
+  border-bottom: 1px solid var(--color-border); /* Subtle separator */
+}
+
+.team-header h1 {
+  font-size: clamp(2.6rem, 5.5vw, 3.4rem); /* Slightly adjusted for impact */
+  color: var(--color-primary); 
+  font-weight: 700;
+  margin-bottom: 1rem; /* More space below title */
+}
+
+.team-header p {
+  font-size: clamp(1.05rem, 2vw, 1.2rem); /* Enhanced readability */
+  color: var(--color-text-light); 
+  max-width: 750px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0; /* Reset top margin as h1 has bottom margin */
+  line-height: 1.75; /* Improved line spacing */
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack on mobile */
+  gap: 1.5rem; /* Adjusted gap for mobile */
+  padding: 1.5rem 1rem; /* Adjusted padding */
+  max-width: 380px; /* Max width for single card layout */
+  margin-left: auto; /* Center the grid container */
+  margin-right: auto; /* Center the grid container */
+}
+
+.team-card { 
+  perspective: 1000px; 
+  width: 100%; /* Allow card to fill grid column */
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* Updated transition as per your request */
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-md); /* Add shadow to the flipping element */
+  border-radius: var(--border-radius-md); /* Consistent rounding */
+}
+
+/* Ensure .flip-card-front and .flip-card-back are correctly positioned and hidden when facing away */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: var(--border-radius-md); /* Match parent's border-radius */
+    overflow: hidden; /* Prevent content spillover */
+}
+
+/* Ensure .flip-card-back is pre-rotated */
+.flip-card-back {
+    transform: rotateY(180deg); /* This is key for correct orientation */
+}
+
+/* Ensure the main flippable card container has perspective */
+/* .service-flip-card is used in the HTML where .flip-card would be generic */
+.service-flip-card {
+    perspective: 1000px;
+    width: 100%; /* Ensure it fills its wrapper */
+    height: 100%; /* Ensure it fills its wrapper */
+}
+
+/* The flip animation itself - .is-flipped is on .service-flip-card */
+.service-flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0; /* Added */
+  left: 0; /* Added */
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: var(--border-radius-md); /* Ensure faces also have rounded corners */
+  overflow: hidden; /* Prevent content spillover */
+}
+
+.card-front {
+  background: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.card-front img {
+  width: 120px; 
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-primary-light); /* Added subtle border */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Added subtle shadow for depth */
+  display: block; /* Ensure it behaves as a block for auto margins */
+  margin-left: auto; /* Center the image */
+  margin-right: auto; /* Center the image */
+}
+.card-front h3 { margin-bottom: 0.5rem; color: #333; }
+.card-front p  { color: #777; }
+
+/* Style for the SVG placeholder in the "Join Us" card front */
+.join-us-placeholder-icon {
+  width: 120px; 
+  height: 120px;
+  border-radius: 50%; /* Make it circular like other team images */
+  object-fit: cover; /* Though for SVG, this might not be as relevant as for img */
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-primary-light);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px; /* Add some padding so the icon isn't edge-to-edge */
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  color: var(--color-primary); /* Set a color for the SVG icon */
+}
+
+.card-back {
+  background: #0055a5;
+  color: #fff; /* Changed text color to white */
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-back p {
+  flex-grow: 1;
+  font-family: var(--font-secondary); /* Ensuring Inter is used */
+  font-size: 1rem; 
+  font-weight: 500; /* Makes the font bolder (Inter Medium) */
+  line-height: 1.5; 
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45); /* Stronger shadow for better contrast */
+  color: #FFFFFF; /* Explicitly set description text to white */
+}
+.card-back .social { text-align: center; margin-top: 1rem; }
+.card-back .social a {
+  display: inline-block; /* Ensures transform works correctly */
+  font-size: 1.5rem; /* Kept for consistency, though SVG size is explicit */
+  margin: 0 0.5rem;
+  transition: transform 0.3s;
+  color: #fff; /* Ensure SVG inherits white color */
+}
+.card-back .social a:hover { transform: scale(1.2); }
+
+.card-back .social a svg {
+  width: 24px; /* Explicit size for SVG */
+  height: 24px; /* Explicit size for SVG */
+  vertical-align: middle; /* Better alignment */
+}
+
+/* Connect With Us Section on Team Page - Enhanced Styling */
+.connect-with-us-section {
+  background-color: var(--color-background); /* Clean background */
+  /* section-padding is already applied via class */
+  border-top: 1px solid var(--color-border); /* Separator from team grid */
+  text-align: center; /* Ensure content is centered */
+}
+
+.connect-with-us-section .section-title { /* h2 */
+  color: var(--color-primary); 
+  margin-bottom: 1rem; 
+}
+
+.connect-with-us-section .section-intro { /* p */
+  color: var(--color-text-light);
+  margin-bottom: 2.5rem; /* More space before the links */
+  max-width: 720px; /* Consistent with other intro texts */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.connect-with-us-section .social-links-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Space between buttons */
+  flex-wrap: wrap; 
+}
+
+.connect-with-us-section .social-links-inline a.social-icon {
+  /* Overriding general .social-icon for a more prominent button style here */
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  padding: 0.8em 1.5em; /* Adjusted padding */
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* Adjusted font size */
+  text-decoration: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out, transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex; /* Helps with alignment if icons were used */
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-with-us-section .social-links-inline a.social-icon:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-background);
+  transform: translateY(-4px); /* More noticeable hover effect */
+  box-shadow: var(--shadow-md);
+}
+
+/* FAQ Category Title */
+.faq-category-title {
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+    color: var(--color-primary-dark);
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    border-bottom: none; /* Replaced with a pseudo-element */
+}
+
+.faq-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+    border-radius: 2px;
+}
+
+.faq-category-title:first-of-type {
+    margin-top: 0;
+}
+
+/* FAQ Page Styles */
+.faq-hero-section {
+    position: relative;
+    background-image: url('images/hero.jpg'); /* Common hero image */
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-primary-light); /* Fallback */
+    padding: clamp(2.5rem, 8vw, 5rem) 0; /* Reduced padding */
+    min-height: 30vh; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: none; /* Remove old border */
+}
+
+/* Add overlay for FAQ hero */
+.faq-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 40, 60, 0.6); /* Darker overlay for better text contrast */
+    z-index: 1;
+}
+
+.faq-hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.faq-hero-section .section-title {
+    color: #fff; /* White text on hero */
+    font-size: clamp(2.5rem, 6vw, 3.8rem); /* Match hero-title */
+    margin-bottom: 0.75rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.faq-hero-section .section-intro {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.95); /* White text on hero */
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* Match hero-intro */
+    line-height: 1.7;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.faq-section {
+    /* .section-padding is applied via class */
+    background-color: var(--color-background); /* Or a very light textured background */
+}
+
+.faq-container {
+    max-width: 900px; /* Max width for FAQ content */
+    margin: 0 auto;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent white for a soft look */
+  border-radius: 25px; /* Bubble shape */
+  margin: 20px 0;
+  padding: 10px; /* Reduced padding, more in question/answer */
+  box-shadow: var(--shadow-md), 0 0 15px var(--color-primary-light) inset; /* Inner glow for bubble */
+  transition: all 0.4s ease-in-out;
+  border: 1px solid var(--color-primary-light);
+  overflow: hidden; /* Important for max-height transition */
+}
+
+.faq-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg), 0 0 20px var(--color-primary-light) inset;
+}
+
+.faq-question {
+  background: var(--color-primary); /* Aqua blue */
+  color: white;
+  border: none;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  padding: 18px 25px;
+  border-radius: 40px; /* Rounded ends for bubble question */
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bubble click effect */
+  position: relative; /* For icon positioning */
+}
+
+.faq-question:hover {
+  background: var(--color-primary-dark);
+}
+
+.faq-question:active { /* Click feedback */
+    transform: scale(0.98);
+}
+
+.faq-question .icon {
+    margin-right: 15px; /* Space for icon/emoji */
+    font-size: 1.5em; /* Larger icon */
+    transition: transform 0.3s ease;
+}
+
+.faq-question .toggle-icon {
+    font-size: 1.2rem;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Playful rotation */
+}
+
+.faq-item.open .faq-question .toggle-icon {
+    transform: rotate(135deg); /* Rotated plus to 'x' or similar */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 25px; /* Horizontal padding */
+  font-size: 1rem; /* Consistent font size for all answers */
+  color: var(--color-text);
+  line-height: 1.7;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.faq-answer p,
+.faq-answer ul {
+    margin: 0; /* Reset default margins */
+    padding: 20px 0 10px; /* Consistent vertical padding for content */
+}
+
+.faq-answer ul {
+    padding-left: 20px; /* Indent for list items */
+    list-style-position: outside;
+}
+
+.faq-answer li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+.faq-answer li:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer strong {
+    color: var(--color-headings); /* Make emphasized text stand out */
+    font-weight: 600;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 1000px; /* Increased max-height for smoother transition */
+  padding: 0 25px 10px; /* Padding when open */
+}
+
+/* Responsive for FAQ */
+@media (max-width: 768px) {
+    .faq-question {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        padding: 15px 20px;
+    }
+    .faq-question .icon {
+        font-size: 1.3em;
+        margin-right: 10px;
+    }
+    .faq-answer {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+    .faq-item {
+        margin: 15px 0;
+        border-radius: 20px;
+    }
+}
+
+/* Service Card Specific Styling Adjustments for Layout */
+
+/* Style for the front card's content area */
+.service-flip-card .flip-card-front .card-content-overlay {
+    padding: 1.5rem;
+    overflow-y: auto; /* Allow scroll if content overflows */
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and button apart */
+    color: #fff; /* Ensure text is white on dark background */
+    background: linear-gradient(to bottom, rgba(0, 30, 50, 0.7) 0%, rgba(0, 30, 50, 0.5) 30%, rgba(0, 30, 50, 0.2) 70%, transparent 100%), rgba(0, 20, 40, 0.4); /* Gradient from top dark to transparent, plus a base dark overlay */
+    position: relative; /* Needed if the ::before pseudo-element was used for an overlay */
+    z-index: 1; /* Ensure content is above any direct background image on flip-card-front */
+}
+
+.service-flip-card .flip-card-front .card-content-overlay h3 {
+    color: var(--color-secondary); /* Yellow for titles */
+       margin-bottom: 0.75rem;
+}
+
+.service-flip-card .flip-card-front .card-content-overlay p {
+    margin-bottom: 0.75rem;
+    flex-grow: 1; /* Allows p to take available space if schedule is short */
+    color: #fff; /* Explicitly set service description text to white */
+}
+
+/* The .service-schedule styles that were here have been removed, as the schedule is no longer on the front. */
+
+.service-flip-card .flip-card-front .service-essentials {
+    font-size: 0.85em;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #fff; /* Explicitly set service essentials text to white */
+}
+
+.service-flip-card .flip-card-front .btn-faq {
+    background-color: rgba(255, 255, 255, 0.15); /* Light, slightly transparent background */
+    color: var(--color-secondary); /* Keep accent color for text */
+    border: 1px solid var(--color-secondary); /* Accent color border */
+    padding: 0.7em 1.5em; /* Adjusted padding */
+    align-self: flex-start;
+    margin-top: auto;
+    border-radius: var(--border-radius-md); /* Rounded corners */
+    font-weight: 500; /* Slightly bolder */
+    text-transform: uppercase; /* Uppercase text for a more formal look */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+    font-size: 0.8rem; /* Adjusted font size */
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.service-flip-card .flip-card-front .btn-faq:hover,
+.service-flip-card .flip-card-front .btn-faq:focus {
+    background-color: var(--color-secondary); /* Accent color background on hover */
+    color: var(--color-headings); /* Dark text on hover for contrast */
+    border-color: var(--color-secondary); /* Keep accent border */
+    transform: scale(1.05); /* Slight bubble effect */
+}
+
+/* Styles for the back of the SERVICE FLIP CARDS */
+.service-flip-card .flip-card-back {
+    background-color: transparent; /* Was var(--color-background) */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Ample padding */
+    box-sizing: border-box;
+    text-align: center; /* Center align text if any */
+}
+
+/* New pseudo-element for blur effect */
+.service-flip-card .flip-card-back::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* covers the entire area */
+    background-color: rgba(255, 255, 255, 0.15); /* Light overlay to help the blur effect */
+    backdrop-filter: blur(20px); /* Heavier blur */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+}
+
+.service-flip-card .flip-card-back .service-card-back-content {
+    position: relative; /* To stack above the ::before pseudo-element */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Use space-evenly for balanced spacing */
+    width: 100%;
+    height: 100%; /* Ensure it takes full height if needed */
+    padding: 1.5rem; /* Increased padding to create a safe area from the edges */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* UPDATED: Styles for the schedule on the back of the card */
+.service-flip-card .flip-card-back .service-schedule {
+    background-color: rgba(255, 255, 255, 0.9); /* More opaque for readability */
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    width: 100%; /* Use full available width inside the card's padding */
+    max-width: none; /* Remove max-width constraint */
+    box-shadow: var(--shadow-sm);
+    color: var(--color-text);
+    margin-bottom: 1rem; /* Add space before buttons */
+}
+
+.service-flip-card .flip-card-back .service-schedule h4 {
+    color: var(--color-headings);
+    margin-bottom: 0.75rem;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* General table styling for schedules */
+.service-flip-card .flip-card-back .service-schedule table {
+    width: 100%;
+    font-size: 0.9rem; /* Adjust font size for better fit */
+    border-collapse: collapse;
+    table-layout: auto; /* Let browser decide column widths */
+}
+
+.service-flip-card .flip-card-back .service-schedule th,
+.service-flip-card .flip-card-back .service-schedule td {
+    text-align: center; /* Center align all content */
+    padding: 0.5rem 0.2rem; /* Adjust padding to fit more content */
+    border-bottom: 1px solid rgba(0, 68, 102, 0.15);
+    vertical-align: middle;
+    word-break: normal; /* Prevent awkward breaking */
+}
+
+.service-flip-card .flip-card-back .service-schedule th {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.service-flip-card .flip-card-back .service-schedule tr:last-child td {
+    border-bottom: none;
+}
+
+/* Add a more prominent separator between different days in the schedule */
+.schedule-table tr.day-separator:not(:first-child) td,
+.schedule-grid-table tr.day-separator:not(:first-child) td {
+    border-top: 2px solid rgba(0, 68, 102, 0.3);
+}
+
+/* Specific styling for the standard schedule (Baby, Kids, Adult) */
+.schedule-table th:first-child,
+.schedule-table td:first-child {
+    text-align: left;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    padding-left: 0.5rem;
+    width: 25%;
+}
+
+/* Specific styling for the grid-like toddler schedule table */
+.schedule-grid-table td:first-child {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+/* Color coding for Kids Swimming Levels */
+.level-1 { color: #0077CC; font-weight: 600; } /* Blue for Level 1 */
+.level-2 { color: #d9534f; font-weight: 600; } /* Red for Level 2 */
+.bold-black { color: var(--color-primary); font-weight: 700; }
+
+/* Legend for Kids Swimming */
+.schedule-legend {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0, 68, 102, 0.15);
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-text-light);
+    flex-wrap: wrap; /* Allow legend to wrap on small screens */
+}
+
+.schedule-legend span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.legend-box.legend-level-1 { background-color: #0077CC; } /* Blue */
+.legend-box.legend-level-2 { background-color: #d9534f; } /* Red */
+
+/* Specific adjustments for the Kids Swimming schedule to ensure visibility */
+#kids-swim-gr .service-schedule,
+#kids-swim-en .service-schedule {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#kids-swim-gr .service-schedule h4,
+#kids-swim-en .service-schedule h4 {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+
+#kids-swim-gr .service-schedule table,
+#kids-swim-en .service-schedule table {
+    font-size: 0.8rem;
+}
+
+#kids-swim-gr .service-schedule td,
+#kids-swim-en .service-schedule td {
+    padding: 0.2rem 0.1rem;
+}
+
+/* Specific adjustments for the Toddler Swimming schedule to ensure visibility */
+#toddler-swim-gr .service-schedule,
+#toddler-swim-en .service-schedule {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#toddler-swim-gr .service-schedule h4,
+#toddler-swim-en .service-schedule h4 {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+
+#toddler-swim-gr .service-schedule table,
+#toddler-swim-en .service-schedule table {
+    font-size: 0.8rem;
+}
+
+#toddler-swim-gr .service-schedule td,
+#toddler-swim-en .service-schedule td {
+    padding: 0.2rem 0.1rem;
+}
+
+/* Specific adjustments for the Aqua Fitness schedule to ensure visibility */
+#aqua-fitness-gr .service-schedule,
+#aqua-fitness-en .service-schedule {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#aqua-fitness-gr .service-schedule h4,
+#aqua-fitness-en .service-schedule h4 {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+#aqua-fitness-gr .service-schedule table,
+#aqua-fitness-en .service-schedule table {
+    font-size: 0.8rem;
+}
+/* Container for the buttons on the back of the card */
+.back-card-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem; /* Space between the buttons */
+    width: 100%; /* Make container fill the padded area of its parent */
+}
+
+/* Style for each button within the container */
+.back-card-buttons .btn {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0;
+    padding: 0.75em 0.5em; /* Adjusted padding for better fit */
+    font-size: 0.9rem; /* Slightly smaller font to prevent overflow */
+    white-space: nowrap; /* Prevent button text from wrapping to a new line */
+    text-align: center;
+}
+
+/*
+   You might need to remove or adjust the .card-content-overlay-back styles (lines 1306-1322)
+   if they were previously styling the service card back content and are now replaced by the structure above.
+   Alternatively, ensure the HTML for the service card back no longer uses the .card-content-overlay-back class
+   or its internal h4/p tags if they are not part of the new "logo + button" design.
+*/
+.card-content-overlay-back {
+    /* display: flex; */ /* Original styles */
+    /* flex-direction: column; */
+    /* justify-content: center; */ /* Vertical centering */
+    /* align-items: center; */ /* Horizontal centering */
+    /* text-align: center; */ /* Ensure text within p is centered if it wraps */
+    /* padding: 1.5rem; */ /* Consistent padding */
+    /* box-sizing: border-box;
+    /* height: 100%; */ /* Ensure it takes full height of the card back */
+    /* overflow-y: auto; */ /* Allow scroll if content overflows */
+    /* If this class is no longer used for service card backs, these rules might not be needed for them. */
+}
+
+.card-content-overlay-back h4 {
+    /* margin-bottom: 15px; */
+    /* font-size: 1.5em; */
+    /* color: var(--color-primary-dark); */
+    /* These might not apply if the new back content is used */
+}
+
+.card-content-overlay-back p {
+    /* margin-bottom: 25px; */
+    /* font-size: 1.1em; */
+    /* color: var(--color-text-light); */
+    /* These might not apply if the new back content is used */
+}
+
+
+/* Desktop Enhancements/*SIZES*/
+@media (min-width: 992px) {
+  .service-flip-card-wrapper {
+    width: 350px; /* Larger width for desktop */
+    height: 630px; /* Larger height for desktop */
+  }
+
+  .card-content-overlay h3 {
+    font-size: 1.8em; /* Larger title for desktop */
+  }
+
+  .card-content-overlay p, 
+  .card-content-overlay .service-essentials {
+    font-size: 1.05em; /* Slightly larger text for desktop */
+  }
+
+  .service-schedule {
+    transform: scale(1.05); /* Make schedule slightly larger */
+    margin: 15px 0; /* Adjust margin for larger schedule */
+  }
+  .service-schedule table {
+    font-size: 0.95em; /* Larger font for schedule table */
+  }
+}
+/*SIZES*/
+@media (min-width: 1200px) {
+  .service-flip-card-wrapper {
+    width: 370px; /* Even larger width for very large screens */
+    height: 630px; /* Even larger height for very large screens */
+  }
+   .card-content-overlay h3 {
+    font-size: 2em; /* Larger title for desktop */
+  }
+
+  .card-content-overlay p, 
+  .card-content-overlay .service-essentials {
+    font-size: 1.1em; /* Slightly larger text for desktop */
+  }
+   .service-schedule table {
+    font-size: 1em; /* Larger font for schedule table */
+  }
+}
+
+.service-flip-card, .flip-card { /* The common clickable/flippable element */
+    perspective: 1000px;
+    width: 100%; /* Ensure it fills its wrapper */
+    height: 100%; /* Ensure it fills its wrapper */
+}
+
+.flip-card-inner { /* Used in services.html structure */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* Front face stays hidden once flipped */
+.flip-card-inner.is-flipped .flip-card-front {
+  visibility: hidden;
+}
+
+/* Back face rotated so it reads correctly */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Bubble Click/Touch Effect CSS */
+.bubble {
+  position: absolute; 
+  background-color: rgba(0, 119, 204, 0.35); /* Slightly adjusted alpha */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: scale(0) translateY(0); /* Initial state */
+  animation: bubble-pop-up 0.8s ease-out forwards; /* Renamed and adjusted duration */
+  z-index: 9999; 
+  opacity: 1;
+}
+
+@keyframes bubble-pop-up { /* Renamed and modified */
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.2) translateY(-20px); /* Start moving up */
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6) translateY(-100px); /* Move further up, scale more, and fade out */
+    opacity: 0;
+  }
+}
+
+/* Global Card Styles SIZES */
+.service-flip-card-wrapper {
+  width: 340px;      /* fixed width */
+  height: 600px;     /* fixed height */
+  position: relative;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Front face stays hidden once flipped */
+.flip-card-inner.is-flipped .flip-card-front {
+  visibility: hidden;
+}
+
+/* Back face rotated so it reads correctly */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Contact Page Specific Styles */
+
+.contact-panel {
+    background-color: var(--color-light-gray);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.contact-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-panel .section-title {
+    color: var(--color-headings); 
+    margin-top: 0;
+    margin-bottom: 1.5rem; 
+    font-size: clamp(1.5rem, 4vw, 2rem); 
+}
+.contact-panel .section-intro {
+    margin-bottom: 1.5rem; 
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* Define grid areas for panels globally for consistent reference */
+.contact-form-panel { grid-area: form; }
+.contact-details-panel { grid-area: details; }
+.map-panel { grid-area: map; }
+
+/* Layout for Form, Map, and Details */
+.contact-layout-grid {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    /* Default mobile layout: single column, specific order */
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "form"
+        "details"
+        "map"; 
+}
+
+/* Tablet: Inherits mobile layout by default. 
+   The media query below can be used for tablet-specific adjustments if needed,
+   but for now, it will follow the mobile stacking order. */
+@media (min-width: 768px) and (max-width: 991px) { /* Tablet */
+    .contact-layout-grid {
+        /* Styles here would override the mobile defaults for tablets. */
+        /* For now, it correctly inherits the mobile stacking: form, details, map. */
+    }
+}
+
+/* Desktop: Form and Details side-by-side (equal width), Map below them */
+@media (min-width: 992px) {
+    .contact-layout-grid {
+        grid-template-columns: 1fr 1fr; /* Form and Details panels will take equal width */
+        grid-template-areas:
+            "form details"  /* Form and Details in the first row */
+            "map map";       /* Map spans both columns in the second row */
+        align-items: flex-start; /* Align items to the start of their grid area */
+    }
+}
+
+
+/* Carousel Image Sizing & Overlay (Contact Page Carousel) */
+.contact-carousel-section.contact-panel {
+    background-color: var(--color-background); 
+    padding-bottom: clamp(2rem, 4vw, 3rem); /* Ensure enough padding if dots are outside */
+}
+
+.contact-space-carousel .slick-slide {
+    min-height: 280px; 
+    max-height: 450px;
+    height: 55vh; /* Slightly increased viewport height */
+    overflow: hidden;
+    border-radius: var(--border-radius-md); /* Rounded corners for slides */
+}
+
+.contact-space-carousel .slick-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.contact-space-carousel .slick-dots {
+    bottom: 15px;
+}
+
+.contact-space-carousel .slick-dots li button:before {
+    font-size: 10px;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.contact-space-carousel .slick-dots li.slick-active button:before {
+    color: var(--color-primary-dark);
+    opacity: 1;
+}
+
+/* Main Hero Carousel Caption Overlay (already good, just ensure it's robust) */
+.carousel-caption {
+    /* ... existing styles ... */
+    background-color: rgba(0, 30, 50, 0.85); /* Slightly darker/more opaque for better contrast */
+    /* ... existing styles ... */
+}
+
+
+/* Form Styling */
+.contact-form .form-group {
+    margin-bottom: 1.25rem; /* Slightly reduced margin */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.4rem; /* Reduced margin */
+    font-weight: 500;
+    color: var(--color-headings);
+    font-size: 0.9rem; /* Slightly smaller label */
+    line-height: 1.4;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-secondary);
+    font-size: 1rem; /* Standardized font size */
+    line-height: 1.5;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb, 0, 119, 204), 0.25); /* Use RGB for box-shadow */
+}
+/* Add --color-primary-rgb to :root if not present */
+/* :root { --color-primary-rgb: 0, 119, 204; } */
+
+
+.contact-form textarea {
+    min-height: 100px; /* Adjusted min-height */
+    resize: vertical;
+}
+
+.contact-form .btn-primary {
+    display: block;
+    width: auto;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem; /* More space above button */
+    padding: 0.75em 1.5em; /* Consistent button padding */
+}
+
+/* Contact Info Panel Styling */
+.contact-details-panel .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+    font-size: clamp(0.95rem, 2vw, 1.05rem); /* Slightly larger base font */
+    line-height: 1.6;
+}
+
+.contact-details-panel .contact-info-item i {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    margin-right: 1rem;
+    width: 25px; 
+    text-align: center;
+    margin-top: 0.1em;
+}
+
+.contact-details-panel .contact-info-item p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+}
+.contact-details-panel .contact-info-item p a {
+    color: var(--color-primary);
+}
+.contact-details-panel .contact-info-item p a:hover {
+    color: var(--color-primary-dark);
+}
+
+
+.contact-details-panel .social-media-panel {
+    margin-top: 1.5rem;
+    display: flex; 
+    gap: 1rem;
+    justify-content: flex-start;
+}
+.contact-details-panel .social-media-panel a {
+    color: var(--color-primary); 
+    font-size: 1.4rem;
+    /* margin-left is handled by gap */
+}
+.contact-details-panel .social-media-panel a:hover {
+    color: var(--color-primary-dark);
+}
+
+
+/* Map Panel Specific Styling */
+.map-panel {
+    background-color: #e0f7fa;
+    border-top: 3px solid var(--color-primary);
+    /* margin-top: 1rem; */ /* Removed, gap handles spacing in grid */
+}
+
+.map-panel .section-title {
+    color: var(--color-headings); /* Ensure title is readable */
+    margin-bottom: 0.75rem; /* Space between title and intro */
+}
+
+.map-panel .section-intro { /* This is the map caption */
+    color: var(--color-text); /* Darker text for better readability on light background */
+    max-width: 700px; /* Control width of caption */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; /* More space above the map iframe */
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+}
+
+.map-panel .map-container {
+    border-radius: var(--border-radius-md);
+    overflow: hidden; 
+    box-shadow: var(--shadow-md); /* Shadow for the map container itself */
+    border: 1px solid var(--color-border); /* Subtle border around map */
+}
+
+.map-panel .map-container iframe {
+    width: 100%;
+    min-height: 320px; /* Adjusted min-height */
+    max-height: 450px;
+    display: block; /* Important for removing extra space below iframe */
+    /* border-radius is handled by .map-container */
+    /* border:0; is already inline */
+}
