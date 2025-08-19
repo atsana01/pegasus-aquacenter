@@ -35,11 +35,45 @@
     <!-- Link to Animate.css for WOW.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
-    <!-- Favicon - Universal -->
-    <link rel="icon" href="favicon/favicon.ico" sizes="any"> <!-- Modern ICO declaration -->
-    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml"> <!-- SVG for modern browsers -->
-    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"> <!-- Apple Touch Icon -->
-    <link rel="manifest" href="favicon/site.webmanifest"> <!-- Web App Manifest -->
+        <!-- Favicon - Universal -->
+        <link rel="icon" href="favicon/favicon.ico" sizes="any"> <!-- Modern ICO declaration -->
+        <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml"> <!-- SVG for modern browsers -->
+        <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"> <!-- Apple Touch Icon -->
+        <link rel="manifest" href="favicon/site.webmanifest"> <!-- Web App Manifest -->
+
+        <!-- Theme color for supported browsers -->
+        <meta name="theme-color" content="#0077CC">
+
+        <!-- Structured data: WebSite + Site Navigation to help search engines surface key pages -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://pegasusaquacenter.gr/#website",
+                    "url": "https://pegasusaquacenter.gr/",
+                    "name": "Pegasus Aqua Center",
+                    "inLanguage": "el",
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": "https://pegasusaquacenter.gr/?s={search_term_string}",
+                        "query-input": "required name=search_term_string"
+                    }
+                },
+                {
+                    "@type": "SiteNavigationElement",
+                    "name": "Main Navigation",
+                    "hasPart": [
+                        { "@type": "SiteNavigationElement", "name": "Home", "url": "https://pegasusaquacenter.gr/" },
+                        { "@type": "SiteNavigationElement", "name": "Services", "url": "https://pegasusaquacenter.gr/services-gr.html" },
+                        { "@type": "SiteNavigationElement", "name": "FAQ", "url": "https://pegasusaquacenter.gr/commonquestion-gr.html" },
+                        { "@type": "SiteNavigationElement", "name": "Contact", "url": "https://pegasusaquacenter.gr/contactus-gr.html" }
+                    ]
+                }
+            ]
+        }
+        </script>
 
 </head>
 <body>
