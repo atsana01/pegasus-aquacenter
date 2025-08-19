@@ -44,36 +44,45 @@
         <!-- Theme color for supported browsers -->
         <meta name="theme-color" content="#0077CC">
 
-        <!-- Structured data: WebSite + Site Navigation to help search engines surface key pages -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "WebSite",
-                    "@id": "https://pegasusaquacenter.gr/#website",
-                    "url": "https://pegasusaquacenter.gr/",
-                    "name": "Pegasus Aqua Center",
-                    "inLanguage": "el",
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": "https://pegasusaquacenter.gr/?s={search_term_string}",
-                        "query-input": "required name=search_term_string"
+            <!-- Structured data: WebSite + richer Site Navigation to help search engines surface key pages and anchors -->
+                    <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@graph": [
+                            {
+                                "@type": "WebSite",
+                                "@id": "https://pegasusaquacenter.gr/#website",
+                                "url": "https://pegasusaquacenter.gr/",
+                                "name": "Pegasus Aqua Center",
+                                "inLanguage": "el",
+                                "potentialAction": {
+                                    "@type": "SearchAction",
+                                    "target": "https://pegasusaquacenter.gr/?s={search_term_string}",
+                                    "query-input": "required name=search_term_string"
+                                }
+                            },
+                            {
+                                "@type": "SiteNavigationElement",
+                                "name": "Main Navigation",
+                                "hasPart": [
+                                    { "@type": "SiteNavigationElement", "name": "Home", "url": "https://pegasusaquacenter.gr/" },
+                                    { "@type": "SiteNavigationElement", "name": "Services", "url": "https://pegasusaquacenter.gr/services-gr.html" },
+                                    { "@type": "SiteNavigationElement", "name": "Baby Swimming", "url": "https://pegasusaquacenter.gr/services-gr.html#baby-swim-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Toddler Swimming", "url": "https://pegasusaquacenter.gr/services-gr.html#toddler-swim-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Kids Swimming", "url": "https://pegasusaquacenter.gr/services-gr.html#kids-swim-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Aqua Fitness", "url": "https://pegasusaquacenter.gr/services-gr.html#aqua-fitness-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Therapeutic Swimming", "url": "https://pegasusaquacenter.gr/services-gr.html#therapeutic-swim-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Sports Shop", "url": "https://pegasusaquacenter.gr/services-gr.html#sports-shop-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Canteen", "url": "https://pegasusaquacenter.gr/services-gr.html#pool-cafeteria-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "FAQ", "url": "https://pegasusaquacenter.gr/commonquestion-gr.html" },
+                                    { "@type": "SiteNavigationElement", "name": "FAQ - Baby Swimming", "url": "https://pegasusaquacenter.gr/commonquestion-gr.html#baby-swim-faq-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "FAQ - Toddler", "url": "https://pegasusaquacenter.gr/commonquestion-gr.html#toddler-swim-faq-gr" },
+                                    { "@type": "SiteNavigationElement", "name": "Contact", "url": "https://pegasusaquacenter.gr/contactus-gr.html" }
+                                ]
+                            }
+                        ]
                     }
-                },
-                {
-                    "@type": "SiteNavigationElement",
-                    "name": "Main Navigation",
-                    "hasPart": [
-                        { "@type": "SiteNavigationElement", "name": "Home", "url": "https://pegasusaquacenter.gr/" },
-                        { "@type": "SiteNavigationElement", "name": "Services", "url": "https://pegasusaquacenter.gr/services-gr.html" },
-                        { "@type": "SiteNavigationElement", "name": "FAQ", "url": "https://pegasusaquacenter.gr/commonquestion-gr.html" },
-                        { "@type": "SiteNavigationElement", "name": "Contact", "url": "https://pegasusaquacenter.gr/contactus-gr.html" }
-                    ]
-                }
-            ]
-        }
-        </script>
+                    </script>
 
 </head>
 <body>
