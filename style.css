@@ -797,6 +797,42 @@ img { max-width: 100%; height: auto; display: block; }
        These rules primarily re-order the items in the header bar. */
 }
 
+/* Tweak header alignment on mobile: move hamburger a bit left and logo to the right over hero */
+@media (max-width: 991px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-left: 0.5rem; /* keep small left padding */
+        padding-right: 0.75rem; /* allow room on right for logo */
+    }
+
+    /* Put the toggle first (left), logo last (right) */
+    .nav-toggle {
+        order: 0;
+        margin-left: 0;
+        margin-right: 0.5rem;
+        transform: translateX(-6px); /* nudge a bit to the left */
+    }
+
+    .nav-links {
+        order: 1;
+    }
+
+    .navbar .logo {
+        order: 2;
+        margin-left: auto; /* push logo to the far right */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Slightly reduce logo height on small screens so it fits the hero area */
+    .navbar .logo img {
+        max-height: 52px;
+        width: auto;
+    }
+}
+
 /* Main Carousel Section */
 .carousel-section {
     position: relative;
